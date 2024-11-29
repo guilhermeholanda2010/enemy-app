@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="medium">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ENEMY</title>
+    <link rel="icon" type="image/png" href="/assets/heart-logo.png">
+    <link rel="stylesheet" href="css/ui-boostrap.css">
+    <link rel="stylesheet" href="css/doca.css">
+    <link rel="stylesheet" href="css/custom-view.css">
+</head>
+
+<body>
+    <div class="h-100">
+        <ui-view class="h-100"></ui-view>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="/assets/libs/ui-bootstrap.min.js"></script>
+    <script src="/assets/libs/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="./js/app.js"></script>
+
+    <script src="./js/services/TokenInterceptor.js"></script>
+    <script src="./js/services/alert-message.js"></script>
+    <script src="./js/services/login.js"></script>
+    <script src="./js/services/post.js"></script>
+    <script src="./js/services/register.js"></script>
+
+    <script src="./js/controllers/login.js"></script>
+    <script src="./js/controllers/home.js"></script>
+    <script src="./js/controllers/post.js"></script>
+    <script src="./js/controllers/register-modal.js"></script>
+    <script src="./js/controllers/post-modal.js"></script>
+    <script src="./js/controllers/post-delete-modal.js"></script>
+
+    <script src="./js/directives/amigo-header.js"></script>
+</body>
+
+</html>
