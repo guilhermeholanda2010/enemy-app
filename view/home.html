@@ -1,0 +1,52 @@
+<div class="doca">
+
+	<amigo-header title="titulo do header" on-login="getPosts" posts-list="posts"
+		on-post-create="refreshPage"></amigo-header>
+
+	<div class="doca-flex doca-items-center doca-mt-1" ng-app="myApp">
+		<div style="margin: 0 auto; width: 800px;">
+			<div class="doca-flex doca-items-center doca-justify-around">
+				<button class="doca-button doca-button--danger doca-w-28 doca-flex doca-justify-center doca-w-1/3"
+					ng-disabled="showLikedOnly" ng-click="handleFilterPosts(true)">
+					Mostrar posts curtidos
+				</button>
+				<button class="doca-button doca-button--danger doca-w-28 doca-flex doca-justify-center doca-w-1/3"
+					ng-disabled="!showLikedOnly" ng-click="handleFilterPosts(false)">
+					Mostrar todos os posts
+				</button>
+			</div>
+			<form class="doca-mt-4" ng-repeat="post in posts">
+				<div class="doca-card doca-flex doca-justify-between doca-p-4 doca-px-8 doca-h-auto">
+					<div class="doca-card__content doca-flex" style="width: 400px;">
+						<div class="doca-flex doca-flex-col doca-justify-between">
+							<div>
+								<p class="doca-card__title doca-text--dark doca-text--semibold doca-text--large doca-cursor-pointer"
+									ng-click="goToPost(post.id)">
+									{{post.title}}
+								</p>
+								<p class="doca-card__subtitle doca-mt-3">
+									{{ truncateText(post.content, 150) }}
+								</p>
+							</div>
+							<div style="width: 500px;" class="doca-flex doca-justify-between">
+								<div>
+									{{ formatDate(post.created_at) }}
+								</div>
+								<div>
+									{{ post.total_likes }}
+
+									<i class="doca-icon doca-icon__heart doca-cursor-pointer" ng-click="likePost(post)"
+										ng-class="{ 'doca-icon--solid doca-text--danger': post.is_liked }"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="doca-card__image-container" ng-show="post.cover_image_url">
+						<img style="width: 200px; height: 200px;" alt="alt" class="doca-card__image"
+							src="{{post.cover_image_url}}" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

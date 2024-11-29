@@ -1,0 +1,13 @@
+{
+    "name": "enemy-app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "http-server ./ localhost -p 8000 -c-l",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+      "angular": "^1.8.3"
+    }
+  }

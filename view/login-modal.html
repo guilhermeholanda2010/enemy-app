@@ -1,0 +1,51 @@
+<div class="doca">
+
+	<div class="doca-modal__header">
+		<h1 class="doca-modal__title">
+			Login
+		</h1>
+		<div class="doca-modal__header__actions">
+			<button class="doca-button doca-button--tertiary" ng-click="dismissModal()">
+				<i class="doca-icon doca-icon--large doca-icon__xmark"></i>
+			</button>
+		</div>
+	</div>
+
+	<div class="doca-modal__content">
+		<form>
+			<div class="doca-form__field doca-mt-2">
+				<label class="doca-form__label">
+					Email
+				</label>
+				<div class="doca-form-control__icon-container">
+					<input class="doca-form-control" ng-model="form.email" type="text" />
+				</div>
+			</div>
+			<div class="doca-form__field doca-mt-2">
+				<label class="doca-form__label">
+					senha
+				</label>
+				<div class="doca-form-control__icon-container doca-form-control__icon-container--right">
+					<input class="doca-form-control" type="{{ passwordInputType }}" ng-model="form.password" />
+
+					<i class="doca-icon doca-icon__eye" style="cursor: pointer;" ng-if="!isPasswordVisible()"
+						ng-click="onPasswordShowClick()"></i>
+					<i class="doca-icon doca-icon__eye-slash" style="cursor: pointer;" ng-if="isPasswordVisible()"
+						ng-click="onPasswordShowClick()"></i>
+
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="doca-modal__footer">
+		<div class="doca-modal__footer__actions">
+			<button class="doca-button doca-button--secondary" ng-click="dismissModal()">
+				Cancelar
+			</button>
+			<button class="doca-button doca-button--danger" ng-click="submit()">
+				Entrar
+			</button>
+		</div>
+	</div>
+</div>
