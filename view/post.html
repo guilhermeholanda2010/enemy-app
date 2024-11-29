@@ -1,0 +1,45 @@
+<div class="doca">
+	<amigo-header></amigo-header>
+
+	<div class="doca-flex doca-flex-col doca-items-center doca-m-auto" ng-app="myApp">
+		<div class="doca-mt-4" style="width: 800px;">
+			<form">
+				<div class="doca-card doca-flex doca-justify-between doca-p-4 doca-px-8 doca-h-auto">
+					<div class="doca-card__content doca-flex">
+						<div style="width: 500px;" class="doca-flex doca-flex-col doca-justify-between">
+							<div>
+								<p class="doca-card__title doca-text--dark doca-text--semibold doca-text--large">
+									{{post.title}}
+								</p>
+								<p class="doca-card__subtitle doca-m-0-auto doca-mt-4">
+									{{post.content}}
+								</p>
+							</div>
+							<div class="doca-flex doca-justify-between doca-mt-3">
+								<div>
+									<button class="doca-button doca-button--secondary" ng-click="goToHome()">
+										<i class="doca-icon doca-icon__arrow-left doca-icon--solid"></i>
+										Voltar
+									</button>
+								</div>
+								<div ng-if="isOwner">
+									<button class="doca-button doca-button--tertiary" ng-click="openUpdateModal()">
+										<i class="doca-icon doca-icon__pen-to-square doca-icon--regular"></i>
+									</button>
+
+									<button class="doca-button doca-button--tertiary" ng-click="openDeleteModal()">
+										<i class="doca-icon doca-icon__trash"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="doca-card__image-container" ng-show="post.cover_image_url">
+						<img style="width: 200px; height: 200px;" alt="alt" class="doca-card__image doca-mt-5"
+							src="{{post.cover_image_url}}" />
+					</div>
+				</div>
+				</form>
+		</div>
+	</div>
+</div>
