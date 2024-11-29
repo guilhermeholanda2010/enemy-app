@@ -1,0 +1,65 @@
+<div class="doca">
+
+	<div class="doca-modal__header">
+		<h1 class="doca-modal__title">
+			{{ isEdit ? 'Atualizar' : 'Criar' }}
+		</h1>
+		<div class="doca-modal__header__actions">
+			<button class="doca-button doca-button--tertiary" ng-click="dismissModal()">
+				<i class="doca-icon doca-icon--large doca-icon__xmark"></i>
+			</button>
+		</div>
+	</div>
+
+	<div class="doca-modal__content">
+		<form>
+			<div class="doca-form__field">
+				<label class="doca-form__label">
+					Titulo
+				</label>
+				<div class="doca-form-control__icon-container">
+					<input class="doca-form-control" ng-model="form.title" type="text" />
+				</div>
+			</div>
+			<div class="doca-form__field doca-mt-2">
+				<label class="doca-form__label">
+					Conteudo
+				</label>
+
+				<textarea
+					type="text"
+					class="doca-form-control doca-h-24"
+					ng-model="form.content">
+				</textarea>
+			</div>
+			<div class="doca-form__field doca-mt-2">
+				<label class="doca-form__label">
+					Resumo
+				</label>
+				<div class="doca-form-control__icon-container doca-form-control__icon-container--right">
+					<input class="doca-form-control" type="text" ng-model="form.summary" />
+				</div>
+			</div>
+			<div class="doca-form__field doca-mt-2">
+				<label class="doca-form__label">
+					Url da sua imagem
+				</label>
+				<div class="doca-form-control__icon-container doca-form-control__icon-container--right">
+					<input class="doca-form-control" type="text" ng-model="form.cover_image_url" />
+
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="doca-modal__footer">
+		<div class="doca-modal__footer__actions">
+			<button class="doca-button doca-button--secondary" ng-click="dismissModal()">
+				Cancelar
+			</button>
+			<button class="doca-button doca-button--danger" ng-click="submit()">
+				{{ isEdit ? 'Salvar alterações' : 'Salvar' }}
+			</button>
+		</div>
+	</div>
+</div>
